@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,6 +23,21 @@ namespace Algoexpert.Questions
                 sortedSquares[i] = answer[i] * answer[i];
             }
 
+        }
+
+        public void SortedSquareArrayCodeNew(int[] array) {
+            int[] sortedSquares = new int[array.Length];
+            int smallerValueIdx = 0;
+            int largerValueIdx = array.Length - 1;
+            for(int idx = array.Length - 1; idx >= 0; idx--)
+            {
+                int smallerValue = array[smallerValueIdx];
+                int largerValue = array[largerValueIdx];
+                if(Math.Abs(smallerValue) > Math.Abs(largerValue))
+                {
+
+                }
+            }
         }
     }
 }
