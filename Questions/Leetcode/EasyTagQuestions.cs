@@ -16,8 +16,19 @@ namespace Algoexpert.Questions.Leetcode
 
 
             int[] result = { 0, 0 };
-            Hashtable hashtable = new Hashtable();
-            hashtable.Add(0, nums);
+            Dictionary<int,int> pairs = new Dictionary<int,int>();
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (pairs.ContainsKey(target - nums[i]))
+                {
+                    result[0] = pairs[(target - nums[i])];
+                    result[1] = i;
+                }
+                else
+                {
+                    pairs.TryAdd(nums[i], i);
+                }
+            }
 
             return result;
 
